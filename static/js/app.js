@@ -9,9 +9,19 @@ data.forEach((ufoReport) => {
   });
 
 var button = d3.select("#filter-btn");
-button.on("click", runEnter);
+// button.on("click", runDate);
 
-function runEnter() {
+button.on("click", runEnter)
+
+function runEnter(){
+  runDate();
+  runCity();
+  runState();
+  runCountry();
+  runShape();
+}
+
+function runDate() {
   d3.event.preventDefault();
   var inputElement = d3.select("#datetime");
   var inputValue = inputElement.property("value");
@@ -19,6 +29,7 @@ function runEnter() {
   tbody.html("");
 
   var filteredData = data.filter(dates => dates.datetime === inputValue)
+  
   filteredData.forEach((ufoReport) => {
     var row = tbody.append("tr");
     Object.entries(ufoReport).forEach(([key, value]) => {
@@ -26,11 +37,12 @@ function runEnter() {
       cell.text(value);
     });
   });
+
   console.log(filteredData);
 }
 
-var button = d3.select("#filter-btn");
-button.on("click", runCity);
+// var button2 = d3.select("#filter-btn");
+// button2.on("click", runCity);
 
 function runCity() {
   d3.event.preventDefault();
@@ -39,19 +51,19 @@ function runCity() {
   console.log(inputValue);
   tbody.html("");
 
-  var filteredData = data.filter(cities => cities.city === inputValue)
-  filteredData.forEach((ufoReport) => {
+  var cities = data.filter(cities => cities.city === inputValue)
+  cities.forEach((ufoReport) => {
     var row = tbody.append("tr");
     Object.entries(ufoReport).forEach(([key, value]) => {
       var cell = row.append("td");
       cell.text(value);
     });
   });
-  console.log(filteredData);
+  console.log(cities);
 }
 
-var button = d3.select("#filter-btn");
-button.on("click", runState);
+// var button = d3.select("#filter-btn");
+// button.on("click", runState);
 
 function runState() {
   d3.event.preventDefault();
@@ -60,19 +72,19 @@ function runState() {
   console.log(inputValue);
   tbody.html("");
 
-  var filteredData = data.filter(states => states.state === inputValue)
-  filteredData.forEach((ufoReport) => {
+  var states = data.filter(states => states.state === inputValue)
+  states.forEach((ufoReport) => {
     var row = tbody.append("tr");
     Object.entries(ufoReport).forEach(([key, value]) => {
       var cell = row.append("td");
       cell.text(value);
     });
   });
-  console.log(filteredData);
+  console.log(states);
 }
 
-var button = d3.select("#filter-btn");
-button.on("click", runCountry);
+// // var button = d3.select("#filter-btn");
+// // button.on("click", runCountry);
 
 function runCountry() {
   d3.event.preventDefault();
@@ -81,19 +93,19 @@ function runCountry() {
   console.log(inputValue);
   tbody.html("");
 
-  var filteredData = data.filter(countries => countries.country === inputValue)
-  filteredData.forEach((ufoReport) => {
+  var countries = data.filter(countries => countries.country === inputValue)
+  countries.forEach((ufoReport) => {
     var row = tbody.append("tr");
     Object.entries(ufoReport).forEach(([key, value]) => {
       var cell = row.append("td");
       cell.text(value);
     });
   });
-  console.log(filteredData);
+  console.log(countries);
 }
 
-var button = d3.select("#filter-btn");
-button.on("click", runShape);
+// // var button = d3.select("#filter-btn");
+// // button.on("click", runShape);
 
 function runShape() {
   d3.event.preventDefault();
@@ -102,13 +114,13 @@ function runShape() {
   console.log(inputValue);
   tbody.html("");
 
-  var filteredData = data.filter(shapes => shapes.shape === inputValue)
-  filteredData.forEach((ufoReport) => {
+  var shapes = data.filter(shapes => shapes.shape === inputValue)
+  shapes.forEach((ufoReport) => {
     var row = tbody.append("tr");
     Object.entries(ufoReport).forEach(([key, value]) => {
       var cell = row.append("td");
       cell.text(value);
     });
   });
-  console.log(filteredData);
+  console.log(shapes);
 }
