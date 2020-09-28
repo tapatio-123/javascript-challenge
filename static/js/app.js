@@ -93,16 +93,16 @@ function runCountry() {
 }
 
 var button = d3.select("#filter-btn");
-button.on("click", runCity);
+button.on("click", runShape);
 
-function runCity() {
+function runShape() {
   d3.event.preventDefault();
-  var inputElement = d3.select("#city");
+  var inputElement = d3.select("#shape");
   var inputValue = inputElement.property("value");
   console.log(inputValue);
   tbody.html("");
 
-  var filteredData = data.filter(cities => cities.city === inputValue)
+  var filteredData = data.filter(shapes => shapes.shape === inputValue)
   filteredData.forEach((ufoReport) => {
     var row = tbody.append("tr");
     Object.entries(ufoReport).forEach(([key, value]) => {
