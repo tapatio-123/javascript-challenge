@@ -14,11 +14,12 @@ var button = d3.select("#filter-btn");
 button.on("click", runEnter)
 
 function runEnter(){
-  runDate();
+  
   runCity();
   runState();
   runCountry();
   runShape();
+  runDate();
 }
 
 function runDate() {
