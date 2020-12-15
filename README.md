@@ -21,3 +21,19 @@ You can handle this... right? The planet Earth needs to know what we have found!
   * Make sure you have a column for `date/time`, `city`, `state`, `country`, `shape`, and `comment` at the very least.
 
 * Use a date form in your HTML document and write JavaScript code that will listen for events and search through the `date/time` column to find rows that match user input.
+
+
+
+- - -
+
+### Dataset
+
+* [UFO Sightings Data](StarterCode/static/js/data.js)
+
+- - -
+
+
+
+### Copyright
+
+Trilogy Education Services © 2019. All Rights Reserved.
